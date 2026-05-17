@@ -24,4 +24,11 @@ class Produto(db.Model):
             self.quantidade_estoque -= quantidade
             return True
         return False
+    
+    def aumentar_estoque(self, quantidade):
+        self.quantidade_estoque += quantidade
+
+    @property
+    def preco_formatado(self):
+        return f"R$ {float(self.preco):.2f}"
 
